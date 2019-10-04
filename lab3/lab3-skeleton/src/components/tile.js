@@ -5,6 +5,15 @@ const Tile = props => {
   const player1 = "bg-red br-100 h3 w3";
   const player2 = "bg-yellow br-100 h3 w3";
   const noPlayer = "bg-white br-100 h3 w3";
+
+  let currPlayer = 'noPlayer';
+  if(value === 1) {
+    currPlayer = 'player1';
+  }
+  else if(value === 2) {
+    currPlayer = 'player2';
+  }
+
   return (
     <td
       style={{
@@ -20,7 +29,9 @@ const Tile = props => {
         {/*
           Part 3:
           Put a div here with class according to the token value
-          */}
+          */
+          <div className={currPlayer}></div>
+        }
       </div>
     </td>
   );

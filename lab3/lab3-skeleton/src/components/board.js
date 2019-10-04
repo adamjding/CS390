@@ -58,6 +58,19 @@ class Board extends Component {
       Part 3:
       Place the token in the appropriate column, update the current player and update the state accordingly
       */
+      let firstAvailable = 0;
+      var i = 0;
+      for(i = 0; i < rows; i++) {
+        if(newBoard[i][col] === null) {
+          newBoard[i][col] = currPlayer;
+          break;
+        }
+      }
+      if(i <= (rows-1)) {
+        this.setState({
+          board: newBoard,
+        });
+      }
     }
   }
 
