@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Table } from "reactstrap";
 import Row from "./row.js";
 import Tile from "./tile.js";
+import { connect } from "net";
 
 const rows = 6;
 const cols = 7;
@@ -46,6 +47,8 @@ class Board extends Component {
 
     this.setState({
       board: newBoard,
+      currPlayer: 1,
+      gameOver: false,
     });
 
   }
@@ -58,9 +61,9 @@ class Board extends Component {
       Part 3:
       Place the token in the appropriate column, update the current player and update the state accordingly
       */
-      console.log(col);
       //col is the x value
-      for(var i = (rows - 1); i >= 0; i--) {
+      var i;
+      for(i = (rows - 1); i >= 0; i--) {
         if(newBoard[i][col] === null) {
           newBoard[i][col] = currPlayer;
           break;
@@ -97,11 +100,16 @@ class Board extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { board, gameOver } = this.state;
+    const { board, gameOver, currPlayer} = this.state;
     /*
     Part 4:
     End the game if a player wins 
     */
+    if(!gameOver && this.checkTable(board)) {
+      this.setState({
+        gameOver: true,
+      })
+    }
   }
 
   render() {
