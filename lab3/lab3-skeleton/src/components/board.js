@@ -142,7 +142,6 @@ class Board extends Component {
                   {myBoard}
                 </div>
              }
-              <Tile/>
             </tbody>
           </Table>
           <h2 className={`flex justify-center w-20 ${playerColor}`}>
