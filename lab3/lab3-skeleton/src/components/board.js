@@ -33,18 +33,22 @@ class Board extends Component {
     Part 1:
     Initialize board with null values
     */
-    board = new Array(rows);
-    for(var i = 0; i < board.length; i++) {
-      board[i] = new Array(cols);
+    let newBoard = new Array(rows);
+    for(var i = 0; i < newBoard.length; i++) {
+      newBoard[i] = new Array(cols);
     }
 
-    for(var i = 0; i < board.length; i++) {
-      let currentRow = board[i];
+    for(var i = 0; i < newBoard.length; i++) {
+      let currentRow = newBoard[i];
       for(var j = 0; j < currentRow.length; j++) {
-        currentRow[j] = (null);
+        currentRow[j] = 'Fuck js';
       } 
     }
-    console.log(board);
+
+    this.setState({
+      board: newBoard,
+    });
+
   }
 
   placeToken(col) {
@@ -98,8 +102,8 @@ class Board extends Component {
       : currPlayer === 1
       ? "red"
       : "yellow";
-
-    let myRow = board.map((row, index) => <Row key={index} row={row} row={this.props.row} placeToken={this.props.placeToken}/>);
+    
+    let myBoard = board.map((row, index) => <Row key={index} row={row} placeToken={this.placeToken.bind(this)}/>);
 
     return (
       <React.Fragment>
@@ -123,7 +127,10 @@ class Board extends Component {
                 Map rows in board to individual Row components with the .map function.
                 Make sure to pass placeToken function so that the child component can call the function
               */
-                myRow
+                <div className={Row}>
+                  {myBoard}
+                </div>
+                
              }
               <Tile/>
             </tbody>

@@ -9,8 +9,8 @@ const Row = props => {
     Map values in props.row to their individual Tile components.
     Make sure to pass placeToken function so that the child component can call the function
   */
-  rowTiles = row;
-  
+  console.log(props);
+  let myRow = props.row;
   return <tr>{rowTiles}</tr>;
 };
 export default Row;
