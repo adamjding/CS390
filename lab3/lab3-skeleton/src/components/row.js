@@ -10,7 +10,7 @@ const Row = props => {
     Make sure to pass placeToken function so that the child component can call the function
   */
   console.log(props);
-  let myRow = props.row;
+  rowTiles = row.map((row, index) => <Tile key={index} colIndex={index} value={row} placeToken={placeToken}/>);
   return <tr>{rowTiles}</tr>;
 };
 export default Row;

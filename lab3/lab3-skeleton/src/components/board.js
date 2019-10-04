@@ -39,9 +39,8 @@ class Board extends Component {
     }
 
     for(var i = 0; i < newBoard.length; i++) {
-      let currentRow = newBoard[i];
-      for(var j = 0; j < currentRow.length; j++) {
-        currentRow[j] = 'Fuck js';
+      for(var j = 0; j < newBoard[i].length; j++) {
+        newBoard[i][j] = null;
       } 
     }
 
@@ -130,7 +129,7 @@ class Board extends Component {
                 <div className={Row}>
                   {myBoard}
                 </div>
-                
+
              }
               <Tile/>
             </tbody>
