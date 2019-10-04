@@ -58,19 +58,18 @@ class Board extends Component {
       Part 3:
       Place the token in the appropriate column, update the current player and update the state accordingly
       */
-      let firstAvailable = 0;
-      var i = 0;
-      for(i = 0; i < rows; i++) {
+      console.log(col);
+      //col is the x value
+      for(var i = (rows - 1); i >= 0; i--) {
         if(newBoard[i][col] === null) {
           newBoard[i][col] = currPlayer;
           break;
         }
       }
-      if(i <= (rows-1)) {
-        this.setState({
-          board: newBoard,
-        });
-      }
+      this.setState({
+        board: newBoard,
+        currPlayer: (currPlayer === 1) ? 2 : 1,
+      })
     }
   }
 
@@ -142,7 +141,6 @@ class Board extends Component {
                 <div className={Row}>
                   {myBoard}
                 </div>
-
              }
               <Tile/>
             </tbody>

@@ -6,12 +6,12 @@ const Tile = props => {
   const player2 = "bg-yellow br-100 h3 w3";
   const noPlayer = "bg-white br-100 h3 w3";
 
-  let currPlayer = 'noPlayer';
+  let currPlayer = noPlayer;
   if(value === 1) {
-    currPlayer = 'player1';
+    currPlayer = player1;
   }
   else if(value === 2) {
-    currPlayer = 'player2';
+    currPlayer = player2;
   }
 
   return (
