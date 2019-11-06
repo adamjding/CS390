@@ -1,0 +1,10 @@
+.Container {
+    text-align: center;
+}
+
+.LoginForm {
+    position: fixed;
+    top: 50%;   /* this sets top left most point of div into the center. Bottom two lines centers the entire div*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
