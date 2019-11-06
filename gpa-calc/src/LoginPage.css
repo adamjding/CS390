@@ -18,11 +18,7 @@
     align-items: flex-stretch;
     margin-top: auto;
     margin-bottom: auto;
-}
-
-.LoginForm * {
-    /* margin-bottom: 20px; */
-
+    border-radius: 10px;
 }
 
 .LoginForm label {
