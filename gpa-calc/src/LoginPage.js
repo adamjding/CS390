@@ -1,5 +1,6 @@
 import React from 'react';
 import './LoginPage.css';
+import NavBar from './NavBar';
 
 class LoginPage extends React.Component {
 
@@ -33,7 +34,9 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div className="Container">
+                <NavBar />
                 <div className="LoginForm">
+
                     <label className="Label">Username</label>
                     <div className="UsernameInput">
                         <input className="Input" type="text" maxLength="50" id="UsernameText" onChange={this.setUsername}></input>
@@ -44,7 +47,10 @@ class LoginPage extends React.Component {
                         <input className="Input" type="password" maxLength="50" id="PasswordText" onChange={this.setPassword}></input>
                     </div>
 
-                    <button className="LoginButton" onClick={this.printUserName}>Login</button>
+                    <div className="Buttons">
+                        <button className="LoginButton" onClick={this.printUserName}>Login</button>
+                        <button className="RegisterButton">Register</button>
+                    </div>
                 </div>
             </div>
         );
