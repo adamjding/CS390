@@ -51,7 +51,7 @@ class LoginPage extends React.Component {
                         <button className="LoginButton" onClick={this.printUserName}>Login</button>
                         <button className="RegisterButton">Register</button>
                     </div>
-                    
+
                 </div>
             </div>
         );
