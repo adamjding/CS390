@@ -6,11 +6,11 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.13",
-    "nodemon": "^2.0.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "react": "^16.11.0",
@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "mystart": "node server.js",
     "devStart": "nodemon server.js"
   },
   "eslintConfig": {
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   }
 }

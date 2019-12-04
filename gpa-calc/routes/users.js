@@ -50,14 +50,17 @@ router.put('/:id', async (req, res) => {
       res.sendStatus(404);
       return;
     }
-    if(req.body.name) {
-      user.name = req.body.name;
+    if(req.body.username) {
+      user.username = req.body.username;
     }
-    if(req.body.age) {
-      user.age = req.body.age;
+    if(req.body.password) {
+      user.password = req.body.password;
     }
-    if(req.body.occupation) {
-      user.occupation = req.body.occupation;
+    if(req.body.totalCredits) {
+      user.totalCredits = req.body.totalCredits;
+    }
+    if(req.body.earnedCredits) {
+      user.earnedCredits = req.body.totalCredits;
     }
     user.save((err) => {
       if(err) {
@@ -81,11 +84,9 @@ router.delete('/:id', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
-  if(!username || !password) {
-    res.sendStatus(400);
-    return;
+  const {errors, isValid} = validateLoginInput(req.body);
+  if(!isValid) {
+    return res.status(400).json(errors);
   }
 })
 
